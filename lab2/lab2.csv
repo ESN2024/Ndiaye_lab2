@@ -1,12 +1,12 @@
-# system info lab2 on 2024.01.15.15:47:20
+# system info lab2 on 2024.01.15.17:16:52
 system_info:
 name,value
 DEVICE,10M50DAF484C7G
 DEVICE_FAMILY,MAX 10
-GENERATION_ID,1705330023
+GENERATION_ID,1705335394
 #
 #
-# Files generated for lab2 on 2024.01.15.15:47:20
+# Files generated for lab2 on 2024.01.15.17:16:52
 files:
 filepath,kind,attributes,module,is_top
 simulation/lab2.vhd,VHDL,,lab2,true
@@ -15,6 +15,7 @@ simulation/submodules/lab2_nios2_gen2_0.v,VERILOG,,lab2_nios2_gen2_0,false
 simulation/submodules/lab2_onchip_memory2_0.vhd,VHDL,,lab2_onchip_memory2_0,false
 simulation/submodules/lab2_pio_0.vhd,VHDL,,lab2_pio_0,false
 simulation/submodules/lab2_pio_1.vhd,VHDL,,lab2_pio_1,false
+simulation/submodules/lab2_timer_0.vhd,VHDL,,lab2_timer_0,false
 simulation/submodules/lab2_mm_interconnect_0.v,VERILOG,,lab2_mm_interconnect_0,false
 simulation/submodules/lab2_irq_mapper.sv,SYSTEM_VERILOG,,lab2_irq_mapper,false
 simulation/submodules/altera_reset_controller.v,VERILOG,,altera_reset_controller,false
@@ -70,6 +71,7 @@ lab2.onchip_memory2_0,lab2_onchip_memory2_0
 lab2.pio_0,lab2_pio_0
 lab2.pio_1,lab2_pio_1
 lab2.pio_2,lab2_pio_1
+lab2.timer_0,lab2_timer_0
 lab2.mm_interconnect_0,lab2_mm_interconnect_0
 lab2.mm_interconnect_0.nios2_gen2_0_data_master_translator,altera_merlin_master_translator
 lab2.mm_interconnect_0.nios2_gen2_0_instruction_master_translator,altera_merlin_master_translator
@@ -79,6 +81,7 @@ lab2.mm_interconnect_0.pio_2_s1_translator,altera_merlin_slave_translator
 lab2.mm_interconnect_0.pio_1_s1_translator,altera_merlin_slave_translator
 lab2.mm_interconnect_0.pio_0_s1_translator,altera_merlin_slave_translator
 lab2.mm_interconnect_0.onchip_memory2_0_s1_translator,altera_merlin_slave_translator
+lab2.mm_interconnect_0.timer_0_s1_translator,altera_merlin_slave_translator
 lab2.mm_interconnect_0.nios2_gen2_0_data_master_agent,altera_merlin_master_agent
 lab2.mm_interconnect_0.nios2_gen2_0_instruction_master_agent,altera_merlin_master_agent
 lab2.mm_interconnect_0.jtag_uart_0_avalon_jtag_slave_agent,altera_merlin_slave_agent
@@ -87,18 +90,21 @@ lab2.mm_interconnect_0.pio_2_s1_agent,altera_merlin_slave_agent
 lab2.mm_interconnect_0.pio_1_s1_agent,altera_merlin_slave_agent
 lab2.mm_interconnect_0.pio_0_s1_agent,altera_merlin_slave_agent
 lab2.mm_interconnect_0.onchip_memory2_0_s1_agent,altera_merlin_slave_agent
+lab2.mm_interconnect_0.timer_0_s1_agent,altera_merlin_slave_agent
 lab2.mm_interconnect_0.jtag_uart_0_avalon_jtag_slave_agent_rsp_fifo,altera_avalon_sc_fifo
 lab2.mm_interconnect_0.nios2_gen2_0_debug_mem_slave_agent_rsp_fifo,altera_avalon_sc_fifo
 lab2.mm_interconnect_0.pio_2_s1_agent_rsp_fifo,altera_avalon_sc_fifo
 lab2.mm_interconnect_0.pio_1_s1_agent_rsp_fifo,altera_avalon_sc_fifo
 lab2.mm_interconnect_0.pio_0_s1_agent_rsp_fifo,altera_avalon_sc_fifo
 lab2.mm_interconnect_0.onchip_memory2_0_s1_agent_rsp_fifo,altera_avalon_sc_fifo
+lab2.mm_interconnect_0.timer_0_s1_agent_rsp_fifo,altera_avalon_sc_fifo
 lab2.mm_interconnect_0.router,lab2_mm_interconnect_0_router
 lab2.mm_interconnect_0.router_001,lab2_mm_interconnect_0_router_001
 lab2.mm_interconnect_0.router_002,lab2_mm_interconnect_0_router_002
 lab2.mm_interconnect_0.router_004,lab2_mm_interconnect_0_router_002
 lab2.mm_interconnect_0.router_005,lab2_mm_interconnect_0_router_002
 lab2.mm_interconnect_0.router_006,lab2_mm_interconnect_0_router_002
+lab2.mm_interconnect_0.router_008,lab2_mm_interconnect_0_router_002
 lab2.mm_interconnect_0.router_003,lab2_mm_interconnect_0_router_003
 lab2.mm_interconnect_0.router_007,lab2_mm_interconnect_0_router_003
 lab2.mm_interconnect_0.cmd_demux,lab2_mm_interconnect_0_cmd_demux
@@ -109,12 +115,14 @@ lab2.mm_interconnect_0.cmd_mux,lab2_mm_interconnect_0_cmd_mux
 lab2.mm_interconnect_0.cmd_mux_002,lab2_mm_interconnect_0_cmd_mux
 lab2.mm_interconnect_0.cmd_mux_003,lab2_mm_interconnect_0_cmd_mux
 lab2.mm_interconnect_0.cmd_mux_004,lab2_mm_interconnect_0_cmd_mux
+lab2.mm_interconnect_0.cmd_mux_006,lab2_mm_interconnect_0_cmd_mux
 lab2.mm_interconnect_0.cmd_mux_001,lab2_mm_interconnect_0_cmd_mux_001
 lab2.mm_interconnect_0.cmd_mux_005,lab2_mm_interconnect_0_cmd_mux_001
 lab2.mm_interconnect_0.rsp_demux,lab2_mm_interconnect_0_rsp_demux
 lab2.mm_interconnect_0.rsp_demux_002,lab2_mm_interconnect_0_rsp_demux
 lab2.mm_interconnect_0.rsp_demux_003,lab2_mm_interconnect_0_rsp_demux
 lab2.mm_interconnect_0.rsp_demux_004,lab2_mm_interconnect_0_rsp_demux
+lab2.mm_interconnect_0.rsp_demux_006,lab2_mm_interconnect_0_rsp_demux
 lab2.mm_interconnect_0.rsp_mux,lab2_mm_interconnect_0_rsp_mux
 lab2.mm_interconnect_0.rsp_mux_001,lab2_mm_interconnect_0_rsp_mux_001
 lab2.mm_interconnect_0.avalon_st_adapter,lab2_mm_interconnect_0_avalon_st_adapter
@@ -129,5 +137,7 @@ lab2.mm_interconnect_0.avalon_st_adapter_004,lab2_mm_interconnect_0_avalon_st_ad
 lab2.mm_interconnect_0.avalon_st_adapter_004.error_adapter_0,lab2_mm_interconnect_0_avalon_st_adapter_error_adapter_0
 lab2.mm_interconnect_0.avalon_st_adapter_005,lab2_mm_interconnect_0_avalon_st_adapter
 lab2.mm_interconnect_0.avalon_st_adapter_005.error_adapter_0,lab2_mm_interconnect_0_avalon_st_adapter_error_adapter_0
+lab2.mm_interconnect_0.avalon_st_adapter_006,lab2_mm_interconnect_0_avalon_st_adapter
+lab2.mm_interconnect_0.avalon_st_adapter_006.error_adapter_0,lab2_mm_interconnect_0_avalon_st_adapter_error_adapter_0
 lab2.irq_mapper,lab2_irq_mapper
 lab2.rst_controller,altera_reset_controller

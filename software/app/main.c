@@ -1,4 +1,6 @@
 #include "system.h"
+#include "altera_avalon_timer_regs.h"
+#include "altera_avalon_timer.h"
 #include "altera_avalon_pio_regs.h"
 #include "sys/alt_stdio.h"
 #include "sys/alt_irq.h"
@@ -7,39 +9,40 @@
 #include <stdio.h>
 #include <unistd.h>
 
+volatile __uint8_t u=0,d=0,c=0;
+
+volatile __uint16_t cnt=0;
+
+void simple_irq()
+{
+	cnt++;
+		
+	u=cnt%10;
+	d=cnt/10;
+	c=cnt/100;
+	
+	IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE,u);//data 
+	IOWR_ALTERA_AVALON_PIO_DATA(PIO_1_BASE,d);//data 
+	IOWR_ALTERA_AVALON_PIO_DATA(PIO_2_BASE,c);//data
+	
+	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_0_BASE,0x01);
+	
+}
+
 int main(void)
 {
-	__uint8_t cnt1=0,cnt2=0,cnt3=0;
+	// Init Timer 
+	
+	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_0_BASE,0x02);
 
-	while(1)
-	{
-		IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE,cnt1);//data 
-		IOWR_ALTERA_AVALON_PIO_DATA(PIO_1_BASE,cnt2);//data 
-		IOWR_ALTERA_AVALON_PIO_DATA(PIO_2_BASE,cnt3);//data
-		
-		cnt1++;
-		
-		if(cnt1==10)
-		{
-			cnt1=0; 
-			cnt2++;
-		}
-		
-		if(cnt2==10)
-		{
-			cnt2=0;
-			cnt3++;
-		}
-		
-		if(cnt3==10)
-		{
-			cnt1=0;
-			cnt2=0;
-			cnt3=0;
-		}
-		usleep(200000);	
-		
-	}		
+
+	IOWR_ALTERA_AVALON_TIMER_CONTROL (TIMER_0_BASE, 0x07 ); 
+
+	
+	// Register IRQ
+	
+	alt_irq_register(TIMER_0_IRQ,NULL,simple_irq);
+
 	
 	return 0;
 }

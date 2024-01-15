@@ -177,6 +177,10 @@
    type="VERILOG"
    library="mm_interconnect_0" />
  <file
+   path="simulation/submodules/lab2_timer_0.vhd"
+   type="VHDL"
+   library="timer_0" />
+ <file
    path="simulation/submodules/lab2_pio_1.vhd"
    type="VHDL"
    library="pio_1" />
