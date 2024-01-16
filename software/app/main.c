@@ -11,15 +11,16 @@
 
 volatile __uint8_t u=0,d=0,c=0;
 
-volatile __uint16_t cnt=0;
+volatile __uint16_t cnt=990;
 
 void simple_irq()
 {
 	cnt++;
+	alt_printf("Start\n\r");
 		
-	u=cnt%10;
-	d=cnt/10;
 	c=cnt/100;
+	d=(cnt%100)/10;
+	u=cnt%10;
 	
 	IOWR_ALTERA_AVALON_PIO_DATA(PIO_0_BASE,u);//data 
 	IOWR_ALTERA_AVALON_PIO_DATA(PIO_1_BASE,d);//data 
@@ -31,17 +32,16 @@ void simple_irq()
 
 int main(void)
 {
-	// Init Timer 
 	
-	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_0_BASE,0x02);
-
+	// Init Timer 
 
 	IOWR_ALTERA_AVALON_TIMER_CONTROL (TIMER_0_BASE, 0x07 ); 
-
 	
 	// Register IRQ
 	
 	alt_irq_register(TIMER_0_IRQ,NULL,simple_irq);
+	
+	while(1);
 
 	
 	return 0;

@@ -27,6 +27,9 @@ use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 
 entity lab2_onchip_memory2_0 is 
+        generic (
+                 INIT_FILE : STRING := "C:/intelFPGA/18.1/nios2eds/ESN_lab2/software/app/mem_init/lab2_onchip_memory2_0.hex"
+                 );
         port (
               -- inputs:
                  signal address : IN STD_LOGIC_VECTOR (13 DOWNTO 0);
@@ -84,7 +87,7 @@ begin
   the_altsyncram : altsyncram
     generic map(
       byte_size => 8,
-      init_file => "UNUSED",
+      init_file => INIT_FILE,
       lpm_type => "altsyncram",
       maximum_depth => 10000,
       numwords_a => 10000,
