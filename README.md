@@ -82,3 +82,4 @@ https://github.com/ESN2024/Ndiaye_lab2/assets/153745637/349204be-57ce-46df-a4ad-
 
 
 # IV Conclusion
+Ce TP a été une introduction fructueuse à l'utilisation d'un timer, à l'affichage de valeur sur les décodeurs 7 segments. 
